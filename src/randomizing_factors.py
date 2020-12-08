@@ -29,6 +29,7 @@ def get_random_number(population):
     4: invalid
     :return: a list of random numbers between 0 and 4
     """
+
     votes = []
     seed()
     min_value_possible = 0
@@ -37,4 +38,13 @@ def get_random_number(population):
         value = randint(min_value_possible, max_value_possible)
         votes.append(value)
     return votes
+
+
+
+
+
+
+
+
+
 

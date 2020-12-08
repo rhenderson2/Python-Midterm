@@ -1,6 +1,8 @@
 # Imports
 
 # from module import <function 1, function 2>
+from typing import Dict
+
 from src.states import get_electorate_values_per_state, get_states
 from src.randomizing_factors import get_random_total_num_voters, get_random_number
 from src.results_processor import process_results
@@ -70,7 +72,7 @@ class Elections:
             # If the vote is none of the above, increment democrat counter
             else:
                 invalid_counter += 1
-        winner = {}
+        winner: Dict[str, int] = {}
         votes = [republican_counter, democrat_counter, libertarian_counter, independent_counter]
         votes.sort(reverse=True)
         highest = votes[0]
@@ -105,9 +107,29 @@ class Elections:
             state_map['votes'] = votes
             state_map['electorate'] = get_electorate_values_per_state(state)
             self.master_state_map[counter] = state_map
-            counter += 1
+         #   democrat_elect = [0]
+          #  republican_elect = 0
+          #  independent_elect = 0
+          #  libertarian_elect = 0
+            #if party == 'democrat':
+               # democrat_elect.append(self.state_map.electorate)
+
+            #    party = key
+             #   electorate = value
+              #  democrat = [0]
+               # if party == 'democrat':
+                #    democrat += value
+                #print(f"{party}{electorate}")
+                #counter += 1
+
+    """Attempting question number four."""
+    #def electorate_counters(self):
+
+
+
 
     def show_winner(self):
         """This method computes which party won"""
         print("And the winner is ... ")
         process_results(self.master_state_map)
+
